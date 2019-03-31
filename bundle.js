@@ -1,14 +1,25 @@
 "use strict";
 
-function teste(x) {
-  var y = 2;
+//operações em arrays
+var arr = [1, 3, 4, 5, 8, 9, 10]; // map = percorre o vetor e retorna algo de dentro
 
-  if (x > 5) {
-    var _y = 4;
-    console.log(x, _y);
-  }
-}
+var newArr = arr.map(function (item) {
+  return item * 2;
+});
+console.log(newArr); // reduce = consome todo o vetor e transforma em uma única variavel
 
-teste(10); // const usuario = { nome: 'Diogo' };
-// usuario.nome = 'Cleiton';
-// console.log(usuario);
+var sum = arr.reduce(function (total, next) {
+  return total + next;
+});
+console.log(sum); // filter = filtra '¬¬ lol, sempre retorna true or false
+
+var filter = arr.filter(function (item) {
+  return item % 2 === 0; // par
+});
+console.log(filter); // find = é utilizado para verificar se existe alguma info dentro do array ou se consegue encontrar a info dentro do arr. Sempre retorna true or false.
+
+var find = arr.find(function (item) {
+  // return item === 4;
+  return item === 2;
+});
+console.log(find);
