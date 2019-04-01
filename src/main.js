@@ -1,32 +1,16 @@
-// ASYNC AWAIT ES8
+import axios from 'axios';
 
-// promise para simular algo que vai demorar 2 segundos para executar;
-const minhaPromise = () => new Promise((resolve, reject) => {
-  setTimeout(() => { resolve('OK') }, 2000);
-});
+class Api {
+  static async getUserInfo(username) {
+    try {
+      const response = await axios.get(`https://api.github.com/users/${username}`);
+      console.log(response);
+    } catch (err) {
+      console.warn('Erro na API');
+    }
 
-//resposta: > es8
-// async e await com a function normal
-// async function executaPromise() {
-//   console.log(await minhaPromise());
-//   console.log(await minhaPromise());
-//   console.log(await minhaPromise());
-// }
-// executaPromise();
-
-// async e await com arrow function
-const executaPromise = async () => {
-  console.log(await minhaPromise());
-  console.log(await minhaPromise());
-  console.log(await minhaPromise());
+  }
 }
-executaPromise();
 
-// resposta: < es8
-// minhaPromise()
-//   .then(response => {
-//   console.log(response);
-//   })
-//   .catch(err => {
-
-//   })
+Api.getUserInfo('drd-2rcl');
+Api.getUserInfo('adasdasfasfg-2rcl');
