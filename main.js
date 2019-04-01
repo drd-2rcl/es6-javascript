@@ -1,12 +1,5 @@
-// OBJECT SHORT SYNTAX
+// CONFIG WEBPACK
 
-const nome = 'Diogo';
-const idade = 26;
+import { soma } from './funcoes';
 
-const usuario = {
-  nome,
-  idade,
-  empresa: 'nenhuma',
-}
-
-console.log(usuario)
+console.log(soma(1,2));
