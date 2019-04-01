@@ -1,8 +1,12 @@
-// TEMPLATE LITERALS
+// OBJECT SHORT SYNTAX
 
 const nome = 'Diogo';
 const idade = 26;
 
-console.log(`Meu nome é ${nome} e tenho ${idade} anos`); 
+const usuario = {
+  nome,
+  idade,
+  empresa: 'nenhuma',
+}
 
-// console.log('Meu nome é ' + nome + ' e tenho ' + idade + ' anos.'); 
+console.log(usuario)
