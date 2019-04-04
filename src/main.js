@@ -26,12 +26,16 @@ class App {
     const response = await api.get(`/repos/${repoInput}`);
     console.log(response);
 
+    const { name, description, html_url, owner: { avatar_url } } = response.data;
+
     this.repositories.push({
-      name: 'es6-javascript',
-      description: 'Mussum Ipsum, cacilds vidis litro abertis.',
-      avatar_url: 'https://avatars0.githubusercontent.com/u/35599465?v=4',
-      html_url: 'https://github.com/drd-2rcl/es6-javascript',
+      name,
+      description,
+      avatar_url,
+      html_url,
     });
+
+    this.inputEl.value = '';
 
     this.render();
   }
@@ -51,6 +55,7 @@ class App {
 
       let linkEl = document.createElement('a');
       linkEl.setAttribute('target', '_blank');
+      linkEl.setAttribute('href', repo.html_url);
       linkEl.appendChild(document.createTextNode('Acessar'));
 
       let listItemEl = document.createElement('li');
